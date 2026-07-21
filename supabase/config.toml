@@ -1,0 +1,33 @@
+# Supabase local/linked project configuration.
+# Docs: https://supabase.com/docs/guides/cli/config
+project_id = "mwanakin-sound"
+
+[api]
+enabled = true
+port = 54321
+schemas = ["public", "storage", "graphql_public"]
+extra_search_path = ["public", "extensions"]
+max_rows = 1000
+
+[db]
+port = 54322
+major_version = 15
+
+[studio]
+enabled = true
+port = 54323
+
+[auth]
+enabled = true
+site_url = "http://localhost:3000"
+additional_redirect_urls = ["http://localhost:3000/auth/callback"]
+jwt_expiry = 3600
+enable_signup = true
+
+[auth.email]
+enable_confirmations = true
+
+[storage]
+enabled = true
+# Global cap; per-bucket limits are enforced in migrations & upload validation.
+file_size_limit = "50MiB"

@@ -1,0 +1,16 @@
+{
+  "name": "Mwanakin Sound",
+  "short_name": "Mwanakin",
+  "description": "Le son du continent, à portée du monde. Plateforme musicale née en RDC.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0b0b0d",
+  "theme_color": "#0b0b0d",
+  "lang": "fr",
+  "categories": ["music", "entertainment"],
+  "icons": [
+    { "src": "/icons/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}

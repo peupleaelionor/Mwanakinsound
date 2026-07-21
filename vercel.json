@@ -1,0 +1,16 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "nextjs",
+  "regions": ["fra1", "cdg1"],
+  "git": {
+    "deploymentEnabled": {
+      "claude/mwanakin-sound-architecture-6muhue": true
+    }
+  },
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [{ "key": "X-DNS-Prefetch-Control", "value": "on" }]
+    }
+  ]
+}
