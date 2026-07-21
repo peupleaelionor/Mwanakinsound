@@ -17,6 +17,8 @@ interface PlayerState {
   shuffle: boolean;
   /** Live playback position in ms, mirrored from the audio element. */
   positionMs: number;
+  /** Full-screen "Now Playing" view visibility. */
+  expanded: boolean;
 
   // --- derived ---
   current: () => PlayableTrack | null;
@@ -34,6 +36,7 @@ interface PlayerState {
   cycleRepeat: () => void;
   toggleShuffle: () => void;
   setPosition: (ms: number) => void;
+  setExpanded: (v: boolean) => void;
 }
 
 export const usePlayerStore = create<PlayerState>((set, get) => ({
@@ -45,6 +48,7 @@ export const usePlayerStore = create<PlayerState>((set, get) => ({
   repeat: 'off',
   shuffle: false,
   positionMs: 0,
+  expanded: false,
 
   current: () => {
     const { queue, currentIndex } = get();
@@ -114,4 +118,5 @@ export const usePlayerStore = create<PlayerState>((set, get) => ({
     })),
   toggleShuffle: () => set((s) => ({ shuffle: !s.shuffle })),
   setPosition: (ms) => set({ positionMs: ms }),
+  setExpanded: (v) => set({ expanded: v }),
 }));

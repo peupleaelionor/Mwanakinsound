@@ -62,4 +62,12 @@ describe('player store', () => {
     expect(s.currentIndex).toBe(1);
     expect(s.positionMs).toBe(0);
   });
+
+  it('toggles the full-screen Now Playing view', () => {
+    expect(usePlayerStore.getState().expanded).toBe(false);
+    usePlayerStore.getState().setExpanded(true);
+    expect(usePlayerStore.getState().expanded).toBe(true);
+    usePlayerStore.getState().setExpanded(false);
+    expect(usePlayerStore.getState().expanded).toBe(false);
+  });
 });

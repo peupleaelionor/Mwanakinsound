@@ -1,5 +1,6 @@
 import 'server-only';
 import { createClient } from '@/lib/supabase/server';
+import { isSupabaseConfigured } from '@/lib/env';
 import type { TrackWithArtist } from '@/types/domain';
 import type { Artist } from '@/types/database.types';
 
@@ -17,7 +18,7 @@ export interface SearchResults {
  */
 export async function search(query: string): Promise<SearchResults> {
   const q = query.trim();
-  if (q.length < 2) return { tracks: [], artists: [] };
+  if (q.length < 2 || !isSupabaseConfigured) return { tracks: [], artists: [] };
 
   const supabase = await createClient();
   const pattern = `%${q}%`;

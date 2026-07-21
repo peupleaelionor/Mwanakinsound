@@ -1,10 +1,8 @@
 'use client';
 
 import Image from 'next/image';
-import Link from 'next/link';
 import { AnimatePresence, motion } from 'framer-motion';
 import {
-  Heart,
   Pause,
   Play,
   Repeat,
@@ -15,7 +13,9 @@ import {
   Volume2,
   VolumeX,
 } from 'lucide-react';
+import { ChevronUp } from 'lucide-react';
 import { usePlayerStore } from './player-store';
+import { LikeButton } from '@/features/likes/like-button';
 import { Slider } from '@/components/ui/slider';
 import { Button } from '@/components/ui/button';
 import { cn, formatDuration } from '@/lib/utils';
@@ -45,6 +45,7 @@ export function PlayerBar() {
   const toggleMute = usePlayerStore((s) => s.toggleMute);
   const cycleRepeat = usePlayerStore((s) => s.cycleRepeat);
   const toggleShuffle = usePlayerStore((s) => s.toggleShuffle);
+  const setExpanded = usePlayerStore((s) => s.setExpanded);
 
   return (
     <AnimatePresence>
@@ -58,30 +59,25 @@ export function PlayerBar() {
           aria-label="Lecteur audio"
         >
           <div className="mx-auto flex h-20 max-w-screen-2xl items-center gap-3 px-3 md:px-4">
-            {/* Now playing */}
+            {/* Now playing — tap artwork/title to open the full-screen player */}
             <div className="flex min-w-0 flex-1 items-center gap-3 md:w-64 md:flex-none">
-              <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-md bg-secondary">
+              <button
+                onClick={() => setExpanded(true)}
+                aria-label="Agrandir le lecteur"
+                className="group relative h-12 w-12 shrink-0 overflow-hidden rounded-md bg-secondary"
+              >
                 {current.coverUrl && (
                   <Image src={current.coverUrl} alt="" fill sizes="48px" className="object-cover" />
                 )}
-              </div>
-              <div className="min-w-0">
+                <span className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 transition-opacity group-hover:opacity-100">
+                  <ChevronUp className="size-5 text-white" />
+                </span>
+              </button>
+              <button onClick={() => setExpanded(true)} className="min-w-0 text-left">
                 <p className="truncate text-sm font-medium">{current.title}</p>
-                <Link
-                  href={`/artist/${current.artistId}`}
-                  className="truncate text-xs text-muted-foreground hover:underline"
-                >
-                  {current.artistName}
-                </Link>
-              </div>
-              <Button
-                variant="ghost"
-                size="icon"
-                className="hidden md:inline-flex"
-                aria-label="Aimer"
-              >
-                <Heart className="size-4" />
-              </Button>
+                <span className="truncate text-xs text-muted-foreground">{current.artistName}</span>
+              </button>
+              <LikeButton trackId={current.id} size="sm" className="hidden md:inline-flex" />
             </div>
 
             {/* Controls + progress */}

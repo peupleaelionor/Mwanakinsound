@@ -27,34 +27,34 @@ const parsed = publicSchema.safeParse({
   NEXT_PUBLIC_PLAUSIBLE_DOMAIN: process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN,
 });
 
+const PLACEHOLDER_URL = 'https://placeholder.supabase.co';
+
 /**
- * In production the vars MUST be present — a misconfigured deploy should fail
- * loudly. During local builds / CI without credentials we fall back to inert
- * placeholders so `next build`, typecheck, and tests can run. The app won't be
- * able to reach Supabase with placeholders, which is the intended, obvious
- * failure mode for a misconfigured environment.
+ * Resilient-by-default. If the public vars are present, use them. If not, fall
+ * back to inert placeholders and log a warning — the app still renders (empty
+ * states) instead of returning HTTP 500. This is deliberate so a fresh Vercel
+ * deploy shows the UI before Supabase is configured; once the vars are set, the
+ * same code lights up with live data. Data access short-circuits when
+ * `isSupabaseConfigured` is false (see services/*), avoiding network hangs.
  */
 export const env = parsed.success
   ? parsed.data
   : (() => {
-      // Allow placeholders during `next build` (page-data collection has no
-      // secrets) and in dev, but fail loudly at real production runtime.
-      const isBuildPhase = process.env.NEXT_PHASE === 'phase-production-build';
-      if (process.env.NODE_ENV === 'production' && !isBuildPhase) {
-        throw new Error(
-          `Invalid environment variables:\n${parsed.error.issues
-            .map((i) => `  - ${i.path.join('.')}: ${i.message}`)
-            .join('\n')}`,
-        );
-      }
       console.warn(
-        '[env] Missing NEXT_PUBLIC_* vars — using inert placeholders. Set them in .env.local.',
+        '[env] Missing/invalid NEXT_PUBLIC_* vars — running with inert placeholders. ' +
+          'Set NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY to enable live data.',
       );
       return publicSchema.parse({
-        NEXT_PUBLIC_SUPABASE_URL: 'https://placeholder.supabase.co',
+        NEXT_PUBLIC_SUPABASE_URL: PLACEHOLDER_URL,
         NEXT_PUBLIC_SUPABASE_ANON_KEY: 'placeholder-anon-key',
       });
     })();
+
+/**
+ * True when a real Supabase project is configured. Services use this to skip
+ * queries (returning empty) rather than firing requests at a placeholder host.
+ */
+export const isSupabaseConfigured = env.NEXT_PUBLIC_SUPABASE_URL !== PLACEHOLDER_URL;
 
 const serverSchema = z.object({
   SUPABASE_SERVICE_ROLE_KEY: z.string().min(1),

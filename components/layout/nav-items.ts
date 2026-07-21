@@ -1,4 +1,4 @@
-import { Home, Search, Library, Radio, Mic2 } from 'lucide-react';
+import { Home, Search, Library, Radio, Mic2, Settings } from 'lucide-react';
 
 /** Shared navigation definition for desktop sidebar & mobile bottom nav. */
 export const NAV_ITEMS = [
@@ -9,3 +9,4 @@ export const NAV_ITEMS = [
 ] as const;
 
 export const STUDIO_ITEM = { href: '/studio', label: 'Espace artiste', icon: Mic2 } as const;
+export const SETTINGS_ITEM = { href: '/settings', label: 'Réglages', icon: Settings } as const;

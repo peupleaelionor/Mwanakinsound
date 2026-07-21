@@ -16,12 +16,16 @@ Plateforme musicale nouvelle génération née en RDC — pensée pour l'Afrique
 ## ✨ Fonctionnalités
 
 - **Découverte** — nouveaux sons, tendances RDC & Afrique, artistes populaires, recommandations personnalisées.
-- **Lecteur** — lecture instantanée, file d'attente, répétition, aléatoire, historique. Architecture prête pour l'offline.
+- **Lecteur** — lecture instantanée, file d'attente, répétition, aléatoire, historique + **vue plein écran « Now Playing »** animée.
+- **Command palette ⌘K** — navigation & recherche instantanée (façon Linear/Raycast), lecture en un clic.
+- **Likes optimistes** — réaction instantanée avec réconciliation serveur.
+- **Espace artiste** — profil, **upload de titres** (drag & drop, validation, publication immédiate), catalogue, statistiques détaillées.
+- **Live listeners** — compteur d'auditeurs **en temps réel** (Supabase Realtime) sur les pages artiste.
 - **Recherche** — artistes & titres, tolérante aux fautes (trigram).
-- **Espace artiste** — profil, catalogue, statistiques détaillées (écoutes, pays, évolution).
 - **Couche IA** — génération de bios, classification, traduction de paroles (provider-agnostique).
-- **Afrique-first** — mode économie de données, classement par pays, mise en avant des talents locaux.
-- **PWA installable** — shell hors-ligne, thème sombre premium.
+- **Afrique-first** — **mode économie de données** (persisté au profil), classement par pays, mise en avant des talents locaux.
+- **PWA installable** — invite d'installation native, shell hors-ligne, thème sombre premium, toasts élégants.
+- **Résilient sur Vercel** — se déploie et s'affiche **sans 500** même avant configuration Supabase (états vides, zéro hang réseau).
 
 ## 🧱 Stack
 

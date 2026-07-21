@@ -1,5 +1,6 @@
 import 'server-only';
 import { createClient } from '@/lib/supabase/server';
+import { isSupabaseConfigured } from '@/lib/env';
 import { SqlRecommendationEngine } from '@/features/recommendations/engine';
 import type { TrackWithArtist } from '@/types/domain';
 import type { Artist } from '@/types/database.types';
@@ -14,6 +15,7 @@ const TRACK_WITH_ARTIST = '*, artist:artists!inner(id, name, slug, verified)';
 
 /** Newest published tracks — "Nouveaux sons". */
 export async function getNewReleases(limit = 12): Promise<TrackWithArtist[]> {
+  if (!isSupabaseConfigured) return [];
   const supabase = await createClient();
   const { data } = await supabase
     .from('tracks')
@@ -29,6 +31,7 @@ export async function getTrending(
   opts: { countryCode?: string; limit?: number } = {},
 ): Promise<TrackWithArtist[]> {
   const { countryCode, limit = 12 } = opts;
+  if (!isSupabaseConfigured) return [];
   const supabase = await createClient();
   let query = supabase
     .from('tracks')
@@ -45,6 +48,7 @@ export async function getTrending(
 
 /** Popular artists by monthly listeners — "Artistes populaires". */
 export async function getPopularArtists(limit = 10): Promise<Artist[]> {
+  if (!isSupabaseConfigured) return [];
   const supabase = await createClient();
   const { data } = await supabase
     .from('artists')
@@ -61,6 +65,7 @@ export async function getPopularArtists(limit = 10): Promise<Artist[]> {
  * (anonymous users, cold start).
  */
 export async function getRecommendations(limit = 12): Promise<TrackWithArtist[]> {
+  if (!isSupabaseConfigured) return [];
   const supabase = await createClient();
   const {
     data: { user },

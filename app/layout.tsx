@@ -4,7 +4,11 @@ import { Providers } from './providers';
 import { AppShell } from '@/components/layout/app-shell';
 import { AudioController } from '@/features/player/audio-controller';
 import { PlayerBar } from '@/features/player/player-bar';
+import { NowPlaying } from '@/features/player/now-playing';
 import { PwaRegister } from '@/components/pwa-register';
+import { Toaster } from '@/components/ui/toaster';
+import { CommandMenu } from '@/features/command/command-menu';
+import { InstallPrompt } from '@/features/pwa/install-prompt';
 import { APP_NAME, APP_TAGLINE } from '@/lib/constants';
 import { env } from '@/lib/env';
 import './globals.css';
@@ -47,6 +51,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <AppShell>{children}</AppShell>
           <AudioController />
           <PlayerBar />
+          <NowPlaying />
+          <CommandMenu />
+          <Toaster />
+          <InstallPrompt />
           <PwaRegister />
         </Providers>
       </body>

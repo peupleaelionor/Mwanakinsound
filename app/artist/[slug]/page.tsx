@@ -6,6 +6,7 @@ import { createClient } from '@/lib/supabase/server';
 import { Section } from '@/components/section';
 import { TrackShelf } from '@/components/track-shelf';
 import { toTrackCards } from '@/lib/map-tracks';
+import { LiveListeners } from '@/features/realtime/live-listeners';
 import { formatCount } from '@/lib/utils';
 import type { TrackWithArtist } from '@/types/domain';
 
@@ -76,10 +77,13 @@ export default async function ArtistPage({ params }: { params: Promise<{ slug: s
             {artist.name}
             {artist.verified && <BadgeCheck className="size-6 text-primary" />}
           </h1>
-          <p className="mt-1 text-sm text-muted-foreground">
-            {formatCount(artist.monthly_listeners)} auditeurs mensuels
-            {artist.city ? ` · ${artist.city}` : ''}
-          </p>
+          <div className="mt-2 flex items-center justify-center gap-3 md:justify-start">
+            <p className="text-sm text-muted-foreground">
+              {formatCount(artist.monthly_listeners)} auditeurs mensuels
+              {artist.city ? ` · ${artist.city}` : ''}
+            </p>
+            <LiveListeners artistId={artist.id} />
+          </div>
           {(artist.ai_bio || artist.bio) && (
             <p className="mt-3 max-w-xl text-sm text-muted-foreground">
               {artist.bio || artist.ai_bio}

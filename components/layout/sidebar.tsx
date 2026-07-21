@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { NAV_ITEMS, STUDIO_ITEM } from './nav-items';
+import { NAV_ITEMS, STUDIO_ITEM, SETTINGS_ITEM } from './nav-items';
 import { cn } from '@/lib/utils';
 import { APP_NAME } from '@/lib/constants';
 
@@ -45,6 +45,18 @@ export function Sidebar() {
         >
           <STUDIO_ITEM.icon className="size-5 text-primary" />
           {STUDIO_ITEM.label}
+        </Link>
+        <Link
+          href={SETTINGS_ITEM.href}
+          className={cn(
+            'mt-1 flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-colors',
+            isActive(SETTINGS_ITEM.href)
+              ? 'bg-secondary text-foreground'
+              : 'text-muted-foreground hover:bg-secondary/60 hover:text-foreground',
+          )}
+        >
+          <SETTINGS_ITEM.icon className="size-5" />
+          {SETTINGS_ITEM.label}
         </Link>
       </div>
     </aside>
