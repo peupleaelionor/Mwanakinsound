@@ -13,7 +13,28 @@ Source : `peupleaelionor/mwanakinsound@claude/mwanakin-sound-architecture-6muhue
 
 ---
 
-## 1. Fichiers SQL à appliquer (ordre strict)
+## 0. Voie recommandée — un seul fichier idempotent ✅
+
+**Le plus simple et le plus sûr :** applique **`supabase/portkit/mwanakin_backend.sql`**.
+C'est tout le backend consolidé en une migration **100 % ré-exécutable**
+(`CREATE … IF NOT EXISTS`, enums gardés par `DO`, `DROP POLICY/TRIGGER IF EXISTS`,
+`CREATE OR REPLACE`). Elle s'applique **sur la base Lovable existante sans
+collision**, qu'elle soit vierge ou déjà initialisée.
+
+```bash
+# Supabase Studio → SQL Editor → coller le fichier → Run     (préprod d'abord)
+# ou :
+psql "$SUPABASE_DB_URL" -f supabase/portkit/mwanakin_backend.sql
+```
+
+`.env` Vite fourni : **`supabase/portkit/.env.vite.example`**.
+
+La section 1 ci-dessous (migrations séparées) reste valable si tu préfères le
+versionnage granulaire côté `supabase/migrations/`.
+
+---
+
+## 1. Alternative — fichiers SQL séparés (ordre strict)
 
 Copier `supabase/migrations/*` et `supabase/config.toml` de la source. Ordre :
 
