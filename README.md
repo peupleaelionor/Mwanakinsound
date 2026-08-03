@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🎵 Mwanakin Sound
+# 🎵 Mwanakin Sounds
 
 **Le son du continent, à portée du monde.**
 
