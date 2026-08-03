@@ -49,11 +49,19 @@ jobs:
           FROM_SECRET: ${{ secrets.VERCEL_TOKEN }}
           FROM_VAR: ${{ vars.VERCEL_TOKEN }}
         run: |
-          TOKEN="${FROM_SECRET:-$FROM_VAR}"
+          # Nettoie espaces/retours à la ligne collés par erreur avec le token.
+          TOKEN="$(printf '%s' "${FROM_SECRET:-$FROM_VAR}" | tr -d '[:space:]')"
           if [ -z "$TOKEN" ]; then
             echo "::error::VERCEL_TOKEN introuvable dans peupleaelionor/Mwanakinsound."
             echo "::error::https://github.com/peupleaelionor/Mwanakinsound/settings/secrets/actions"
             echo "::error::-> onglet 'Secrets', section 'Repository secrets', nom exact VERCEL_TOKEN."
+            exit 1
+          fi
+          if [ "${#TOKEN}" -lt 20 ]; then
+            echo "::error::VERCEL_TOKEN trop court (${#TOKEN} caractères) : ce n'est pas la VALEUR du token."
+            echo "::error::Sur https://vercel.com/account/tokens -> Create Token -> copier la LONGUE chaîne"
+            echo "::error::affichée UNE SEULE FOIS à la création (~24 caractères, sans espace), pas le nom du token."
+            echo "::error::Puis mettre à jour le secret VERCEL_TOKEN avec cette valeur."
             exit 1
           fi
           echo "::add-mask::$TOKEN"
