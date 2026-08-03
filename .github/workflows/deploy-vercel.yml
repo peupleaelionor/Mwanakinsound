@@ -1,0 +1,61 @@
+# Déploiement de MWANAKIN SOUND sur Vercel (projet « mwanakinsound »).
+# ----------------------------------------------------------------------------
+# Piloté par token : ne dépend ni de l'intégration Git Vercel, ni du connecteur.
+# Le secret VERCEL_TOKEN est lu dans CE dépôt (peupleaelionor/Mwanakinsound).
+#
+# Le build tourne sur l'infra Vercel (source uploadée par la CLI) : pas
+# d'installation de dépendances sur le runner. Les variables d'environnement
+# (NEXT_PUBLIC_SUPABASE_URL, NEXT_PUBLIC_SUPABASE_ANON_KEY,
+# SUPABASE_SERVICE_ROLE_KEY…) restent celles du projet Vercel.
+#
+# Le build passe même sans secrets (placeholders inertes, cf. lib/env.ts) :
+# le site s'affiche, il se connecte simplement à la base une fois les
+# variables posées.
+
+name: Deploy to Vercel (production)
+
+on:
+  push:
+    branches: [claude/mwanakin-sound-architecture-6muhue, main]
+  workflow_dispatch:
+
+concurrency:
+  group: vercel-prod-mwanakinsound
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      VERCEL_ORG_ID: team_wA2vqUH7C2tzNOkNeZkP9aKV
+      VERCEL_PROJECT_ID: prj_SxNwq1TMbpRz8sFFpYZgFRLGxOjv
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install Vercel CLI
+        run: npm install -g vercel@latest
+
+      # Le token est accepté en secret (recommandé) ou en variable. Le
+      # déploiement se fait dans ce même step : le token ne transite jamais par
+      # un output (une `vars` n'est pas masquée et fuiterait dans les logs).
+      - name: Deploy to production
+        env:
+          FROM_SECRET: ${{ secrets.VERCEL_TOKEN }}
+          FROM_VAR: ${{ vars.VERCEL_TOKEN }}
+        run: |
+          TOKEN="${FROM_SECRET:-$FROM_VAR}"
+          if [ -z "$TOKEN" ]; then
+            echo "::error::VERCEL_TOKEN introuvable dans peupleaelionor/Mwanakinsound."
+            echo "::error::https://github.com/peupleaelionor/Mwanakinsound/settings/secrets/actions"
+            echo "::error::-> onglet 'Secrets', section 'Repository secrets', nom exact VERCEL_TOKEN."
+            exit 1
+          fi
+          echo "::add-mask::$TOKEN"
+          echo "Token détecté (${#TOKEN} caractères) — déploiement en cours…"
+          vercel deploy --prod --yes --token="$TOKEN"
