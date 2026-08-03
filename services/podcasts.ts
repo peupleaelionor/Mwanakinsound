@@ -42,6 +42,19 @@ export async function getPodcasts(
   return data ?? [];
 }
 
+/** Un épisode publié avec sa série. */
+export async function getEpisodeById(id: string): Promise<EpisodeWithPodcast | null> {
+  if (!isSupabaseConfigured) return null;
+  const supabase = await createClient();
+  const { data } = await supabase
+    .from('podcast_episodes')
+    .select(EPISODE_WITH_PODCAST)
+    .eq('id', id)
+    .eq('status', 'published')
+    .maybeSingle();
+  return (data as unknown as EpisodeWithPodcast) ?? null;
+}
+
 /** Une série avec ses épisodes publiés. */
 export async function getPodcastBySlug(slug: string): Promise<PodcastWithEpisodes | null> {
   if (!isSupabaseConfigured) return null;

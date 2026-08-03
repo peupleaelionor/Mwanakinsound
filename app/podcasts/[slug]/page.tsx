@@ -2,9 +2,13 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { Mic } from 'lucide-react';
+import Link from 'next/link';
 import { TrackShelf } from '@/components/track-shelf';
 import { toEpisodeCards } from '@/features/podcasts/map-episode';
+import { CommentSection } from '@/features/social/comment-section';
+import { ShareModal } from '@/features/social/share-modal';
 import { getPodcastBySlug } from '@/services/podcasts';
+import { formatDuration } from '@/lib/utils';
 import type { EpisodeWithPodcast } from '@/types/domain';
 
 export const dynamic = 'force-dynamic';
@@ -61,6 +65,14 @@ export default async function PodcastPage({ params }: { params: Promise<{ slug: 
           {podcast.description && (
             <p className="mt-2 max-w-xl text-sm text-muted-foreground">{podcast.description}</p>
           )}
+          <div className="mt-3">
+            <ShareModal
+              podcastId={podcast.id}
+              slug={podcast.slug}
+              title={podcast.title}
+              subtitle="Podcast"
+            />
+          </div>
         </div>
       </div>
 
@@ -68,6 +80,28 @@ export default async function PodcastPage({ params }: { params: Promise<{ slug: 
         {episodes.length} épisode{episodes.length > 1 ? 's' : ''}
       </h2>
       <TrackShelf tracks={toEpisodeCards(episodes)} />
+
+      {/* Liste cliquable vers chaque épisode (fil de commentaires par épisode). */}
+      <ul className="mt-4 divide-y divide-border">
+        {episodes.map((ep) => (
+          <li key={ep.id}>
+            <Link
+              href={`/episodes/${ep.id}`}
+              className="flex items-center justify-between gap-3 py-3 text-sm hover:text-primary"
+            >
+              <span className="truncate">
+                {ep.episode_number ? `${ep.episode_number}. ` : ''}
+                {ep.title}
+              </span>
+              <span className="shrink-0 text-xs text-muted-foreground">
+                {formatDuration(ep.duration_ms)}
+              </span>
+            </Link>
+          </li>
+        ))}
+      </ul>
+
+      <CommentSection target={{ podcastId: podcast.id }} />
     </div>
   );
 }

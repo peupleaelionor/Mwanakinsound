@@ -251,6 +251,35 @@ export type PodcastEpisode = {
   updated_at: string;
 }
 
+export type ReactionEmoji = '❤️' | '🔥' | '🙏' | '🎶';
+
+export type SocialComment = {
+  id: string;
+  user_id: string;
+  podcast_id: string | null;
+  episode_id: string | null;
+  content: string;
+  hashtags: string[];
+  created_at: string;
+}
+
+export type CommentReaction = {
+  id: string;
+  user_id: string;
+  comment_id: string;
+  emoji: ReactionEmoji;
+  created_at: string;
+}
+
+export type SocialShare = {
+  id: string;
+  user_id: string | null;
+  podcast_id: string | null;
+  episode_id: string | null;
+  share_link: string;
+  created_at: string;
+}
+
 /**
  * Grand livre MwanaCoins — points d'engagement social.
  * Sans valeur monétaire : aucune relation avec `payments` ou `subscriptions`.
@@ -298,6 +327,18 @@ export interface Database {
         PodcastEpisode,
         Partial<PodcastEpisode> & Pick<PodcastEpisode, 'podcast_id' | 'title' | 'slug'>
       >;
+      social_comments: Table<
+        SocialComment,
+        Pick<SocialComment, 'user_id' | 'content'> & Partial<SocialComment>
+      >;
+      comment_reactions: Table<
+        CommentReaction,
+        Pick<CommentReaction, 'user_id' | 'comment_id' | 'emoji'> & Partial<CommentReaction>
+      >;
+      social_shares: Table<
+        SocialShare,
+        Pick<SocialShare, 'share_link'> & Partial<SocialShare>
+      >;
     };
     Views: Record<never, never>;
     Functions: {
@@ -328,6 +369,14 @@ export interface Database {
       record_episode_play: {
         Args: { p_episode_id: string };
         Returns: undefined;
+      };
+      social_user_stats: {
+        Args: { p_user: string };
+        Returns: Array<{
+          comment_count: number;
+          reaction_given: number;
+          prayer_reactions: number;
+        }>;
       };
     };
     Enums: {

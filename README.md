@@ -22,6 +22,7 @@ Plateforme musicale nouvelle génération née en RDC — pensée pour l'Afrique
 - **Espace artiste** — profil, **upload de titres** (drag & drop, validation, publication immédiate), catalogue, statistiques détaillées.
 - **Live listeners** — compteur d'auditeurs **en temps réel** (Supabase Realtime) sur les pages artiste.
 - **Podcasts** — séries et épisodes courts (format 2G-friendly), lus par le même moteur audio résilient.
+- **Réseau social** — commentaires (280 c, hashtags), réactions ❤️🔥🙏🎶, partages deep-link, badges d'engagement, modération auto. Voir [`docs/SOCIAL.md`](docs/SOCIAL.md).
 - **Recherche** — artistes & titres, tolérante aux fautes (trigram).
 - **Couche IA** — génération de bios, classification, traduction de paroles (provider-agnostique).
 - **Afrique-first** — **mode économie de données** (persisté au profil), classement par pays, mise en avant des talents locaux.
