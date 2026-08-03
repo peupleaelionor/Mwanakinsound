@@ -1,9 +1,10 @@
-import { Home, Search, Library, Radio, Mic2, Settings } from 'lucide-react';
+import { Home, Search, Library, Radio, Mic2, Settings, Podcast } from 'lucide-react';
 
 /** Shared navigation definition for desktop sidebar & mobile bottom nav. */
 export const NAV_ITEMS = [
   { href: '/', label: 'Accueil', icon: Home },
   { href: '/search', label: 'Recherche', icon: Search },
+  { href: '/podcasts', label: 'Podcasts', icon: Podcast },
   { href: '/library', label: 'Bibliothèque', icon: Library },
   { href: '/discover', label: 'Découvrir', icon: Radio },
 ] as const;

@@ -106,7 +106,7 @@ export function NowPlaying() {
               <div className="min-w-0">
                 <h2 className="truncate font-display text-2xl font-bold">{current.title}</h2>
                 <Link
-                  href={`/artist/${current.artistId}`}
+                  href={current.linkHref ?? `/artist/${current.artistId}`}
                   onClick={() => setExpanded(false)}
                   className="truncate text-muted-foreground hover:underline"
                 >

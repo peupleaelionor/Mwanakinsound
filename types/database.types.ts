@@ -221,6 +221,36 @@ export type TrackGenre = {
   genre_id: string;
 }
 
+export type Podcast = {
+  id: string;
+  owner_id: string;
+  slug: string;
+  title: string;
+  description: string | null;
+  cover_url: string | null;
+  category: string | null;
+  language: string | null;
+  status: ContentStatus;
+  created_at: string;
+  updated_at: string;
+}
+
+export type PodcastEpisode = {
+  id: string;
+  podcast_id: string;
+  title: string;
+  slug: string;
+  description: string | null;
+  audio_path: string | null;
+  duration_ms: number;
+  episode_number: number | null;
+  status: ContentStatus;
+  play_count: number;
+  published_at: string | null;
+  created_at: string;
+  updated_at: string;
+}
+
 /**
  * Grand livre MwanaCoins — points d'engagement social.
  * Sans valeur monétaire : aucune relation avec `payments` ou `subscriptions`.
@@ -263,6 +293,11 @@ export interface Database {
       track_genres: Table<TrackGenre, TrackGenre>;
       // Lecture seule côté client : l'écriture passe par `award_mwana_coins`.
       mwana_coins_ledger: Table<MwanaCoinsEntry, never, never>;
+      podcasts: Table<Podcast, Partial<Podcast> & Pick<Podcast, 'owner_id' | 'slug' | 'title'>>;
+      podcast_episodes: Table<
+        PodcastEpisode,
+        Partial<PodcastEpisode> & Pick<PodcastEpisode, 'podcast_id' | 'title' | 'slug'>
+      >;
     };
     Views: Record<never, never>;
     Functions: {
@@ -289,6 +324,10 @@ export interface Database {
       mwana_coins_balance: {
         Args: Record<string, never>;
         Returns: number;
+      };
+      record_episode_play: {
+        Args: { p_episode_id: string };
+        Returns: undefined;
       };
     };
     Enums: {

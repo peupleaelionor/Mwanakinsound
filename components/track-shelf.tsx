@@ -70,7 +70,7 @@ export function TrackShelf({ tracks }: { tracks: TrackCardData[] }) {
                 {track.title}
               </p>
               <Link
-                href={`/artist/${track.artistId}`}
+                href={track.linkHref ?? `/artist/${track.artistId}`}
                 className="truncate text-xs text-muted-foreground hover:underline"
               >
                 {track.artistName}
