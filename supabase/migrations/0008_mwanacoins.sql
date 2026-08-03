@@ -43,8 +43,10 @@ create index if not exists idx_coins_user on public.mwana_coins_ledger (user_id,
 
 -- Anti-abus : une seule attribution par (utilisateur, type, sujet, jour).
 -- Rejouer un like ou un partage en boucle ne crédite rien de plus.
+-- Grain journalier figé en UTC : `created_at::date` dépend du fuseau (STABLE)
+-- et ne peut pas servir d'expression d'index ; la conversion UTC est IMMUTABLE.
 create unique index if not exists uq_coins_daily_grain
-  on public.mwana_coins_ledger (user_id, kind, subject_id, (created_at::date));
+  on public.mwana_coins_ledger (user_id, kind, subject_id, ((created_at at time zone 'UTC')::date));
 
 alter table public.mwana_coins_ledger enable row level security;
 
@@ -106,7 +108,7 @@ begin
   from public.mwana_coins_ledger
   where user_id = v_user
     and kind = p_kind
-    and created_at::date = current_date;
+    and (created_at at time zone 'UTC')::date = (now() at time zone 'UTC')::date;
 
   if v_used >= public.mwana_coins_daily_cap(p_kind) then
     return 0;

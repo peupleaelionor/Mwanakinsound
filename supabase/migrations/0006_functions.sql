@@ -9,11 +9,13 @@ create or replace function public.handle_new_user()
 returns trigger
 language plpgsql
 security definer
-set search_path = public
+-- `extensions` inclus pour résoudre le type citext de profiles.username ;
+-- variables déclarées en `text` (cast implicite vers la colonne citext).
+set search_path = public, extensions
 as $$
 declare
-  base_username citext;
-  final_username citext;
+  base_username text;
+  final_username text;
   suffix int := 0;
 begin
   base_username := split_part(new.email, '@', 1);
@@ -32,7 +34,7 @@ begin
   values (
     new.id,
     final_username,
-    coalesce(new.raw_user_meta_data ->> 'display_name', base_username::text),
+    coalesce(new.raw_user_meta_data ->> 'display_name', base_username),
     new.raw_user_meta_data ->> 'avatar_url'
   );
 
