@@ -1,0 +1,73 @@
+{
+  "nav": {
+    "home": "Nyumbani",
+    "studio": "Studio",
+    "library": "Muziki Wangu",
+    "search": "Tafuta",
+    "discover": "Gundua",
+    "settings": "Mipangilio",
+    "signin": "Ingia",
+    "signout": "Toka"
+  },
+  "action": {
+    "play": "Cheza",
+    "pause": "Simamisha",
+    "listen": "Sikiliza",
+    "like": "Penda",
+    "share": "Shiriki",
+    "follow": "Fuata",
+    "upload": "Pakia",
+    "publish": "Chapisha",
+    "search": "Tafuta"
+  },
+  "home": {
+    "hero_kicker": "Alizaliwa Kinshasa",
+    "hero_title": "Sauti ya Kongo, kwa dunia nzima.",
+    "hero_subtitle": "Rumba, ndombolo, gospeli na afrobeats — kwa mitandao ya Afrika, na Hali ya Eco.",
+    "start_mix": "Anza mchanganyiko",
+    "quick_studio": "Studio ya Haraka",
+    "for_you": "Kwa ajili yako",
+    "for_you_sub": "Imependekezwa kutokana na usikilizaji wako",
+    "new_sounds": "Sauti mpya",
+    "new_sounds_sub": "Zimechapishwa hivi karibuni",
+    "africa_trends": "Mitindo ya Afrika",
+    "africa_trends_sub": "Bara katika mzunguko",
+    "popular_artists": "Wasanii maarufu",
+    "popular_artists_sub": "Sauti za wakati huu"
+  },
+  "wallet": {
+    "title": "Pochi",
+    "coins": "MwanaCoins",
+    "hint": "Pata MwanaCoins kwa kila usikilizaji kamili na uwazawadie wasanii wako.",
+    "not_money": "Pointi za ushiriki — hakuna ununuzi, kutoa wala kubadilisha."
+  },
+  "player": {
+    "now_playing": "Inacheza sasa",
+    "eco_mode": "Hali ya Eco"
+  },
+  "search": {
+    "placeholder": "Tafuta…"
+  },
+  "content": {
+    "song": "Wimbo",
+    "instrumental": "Ala",
+    "asmr": "ASMR",
+    "podcast": "Podikasti",
+    "gospel": "Injili",
+    "nature": "Mazingira"
+  },
+  "studio": {
+    "title": "Studio",
+    "upload_cta": "Chapisha kazi",
+    "dashboard": "Dashibodi"
+  },
+  "auth": {
+    "signin_cta": "Ingia",
+    "welcome": "Karibu"
+  },
+  "common": {
+    "all": "Vyote",
+    "loading": "Inapakia…",
+    "brand": "MWANAKIN SOUND"
+  }
+}

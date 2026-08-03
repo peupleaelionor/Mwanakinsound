@@ -1,0 +1,73 @@
+{
+  "nav": {
+    "home": "Início",
+    "studio": "Estúdio",
+    "library": "Minha Música",
+    "search": "Buscar",
+    "discover": "Descobrir",
+    "settings": "Definições",
+    "signin": "Entrar",
+    "signout": "Sair"
+  },
+  "action": {
+    "play": "Tocar",
+    "pause": "Pausar",
+    "listen": "Ouvir",
+    "like": "Gostar",
+    "share": "Partilhar",
+    "follow": "Seguir",
+    "upload": "Enviar",
+    "publish": "Publicar",
+    "search": "Buscar"
+  },
+  "home": {
+    "hero_kicker": "Nascido em Kinshasa",
+    "hero_title": "O som do Congo, para todo o planeta.",
+    "hero_subtitle": "Rumba, ndombolo, gospel e afrobeats — pensados para as redes africanas, com Modo Eco.",
+    "start_mix": "Iniciar o mix",
+    "quick_studio": "Estúdio Rápido",
+    "for_you": "Para si",
+    "for_you_sub": "Recomendado pelas tuas escutas",
+    "new_sounds": "Novos sons",
+    "new_sounds_sub": "Acabados de publicar",
+    "africa_trends": "Tendências de África",
+    "africa_trends_sub": "O continente em repetição",
+    "popular_artists": "Artistas populares",
+    "popular_artists_sub": "As vozes do momento"
+  },
+  "wallet": {
+    "title": "Carteira",
+    "coins": "MwanaCoins",
+    "hint": "Ganha MwanaCoins a cada escuta completa e recompensa os teus artistas.",
+    "not_money": "Pontos de interação — sem compra, levantamento ou conversão."
+  },
+  "player": {
+    "now_playing": "A tocar agora",
+    "eco_mode": "Modo Eco"
+  },
+  "search": {
+    "placeholder": "Buscar…"
+  },
+  "content": {
+    "song": "Canção",
+    "instrumental": "Instrumental",
+    "asmr": "ASMR",
+    "podcast": "Podcast",
+    "gospel": "Gospel",
+    "nature": "Ambiente"
+  },
+  "studio": {
+    "title": "Estúdio",
+    "upload_cta": "Publicar uma criação",
+    "dashboard": "Painel"
+  },
+  "auth": {
+    "signin_cta": "Entrar",
+    "welcome": "Bem-vindo"
+  },
+  "common": {
+    "all": "Tudo",
+    "loading": "A carregar…",
+    "brand": "MWANAKIN SOUND"
+  }
+}

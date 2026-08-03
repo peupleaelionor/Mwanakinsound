@@ -1,0 +1,73 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "studio": "Studio",
+    "library": "Ma Musique",
+    "search": "Recherche",
+    "discover": "Découvrir",
+    "settings": "Réglages",
+    "signin": "Se connecter",
+    "signout": "Se déconnecter"
+  },
+  "action": {
+    "play": "Lire",
+    "pause": "Pause",
+    "listen": "Écouter",
+    "like": "J'aime",
+    "share": "Partager",
+    "follow": "Suivre",
+    "upload": "Importer",
+    "publish": "Publier",
+    "search": "Rechercher"
+  },
+  "home": {
+    "hero_kicker": "Né à Kinshasa",
+    "hero_title": "Le son du Congo, pour toute la planète.",
+    "hero_subtitle": "Rumba, ndombolo, gospel et afrobeats — pensés pour les réseaux africains, avec Mode Éco intégré.",
+    "start_mix": "Lancer le mix",
+    "quick_studio": "Studio Rapide",
+    "for_you": "Pour vous",
+    "for_you_sub": "Recommandé selon tes écoutes",
+    "new_sounds": "Nouveaux sons",
+    "new_sounds_sub": "Fraîchement publiés",
+    "africa_trends": "Tendances Afrique",
+    "africa_trends_sub": "Le continent en boucle",
+    "popular_artists": "Artistes populaires",
+    "popular_artists_sub": "Les voix du moment"
+  },
+  "wallet": {
+    "title": "Portefeuille",
+    "coins": "MwanaCoins",
+    "hint": "Gagne des MwanaCoins à chaque écoute complète et récompense tes artistes.",
+    "not_money": "Points d'engagement — ni achat, ni retrait, ni conversion."
+  },
+  "player": {
+    "now_playing": "En lecture",
+    "eco_mode": "Mode Éco"
+  },
+  "search": {
+    "placeholder": "Rechercher…"
+  },
+  "content": {
+    "song": "Chanson",
+    "instrumental": "Instrumental",
+    "asmr": "ASMR",
+    "podcast": "Podcast",
+    "gospel": "Gospel",
+    "nature": "Ambiance"
+  },
+  "studio": {
+    "title": "Studio",
+    "upload_cta": "Publier une création",
+    "dashboard": "Tableau de bord"
+  },
+  "auth": {
+    "signin_cta": "Se connecter",
+    "welcome": "Bienvenue"
+  },
+  "common": {
+    "all": "Tout",
+    "loading": "Chargement…",
+    "brand": "MWANAKIN SOUND"
+  }
+}

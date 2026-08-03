@@ -1,0 +1,73 @@
+{
+  "nav": {
+    "home": "الرئيسية",
+    "studio": "الاستوديو",
+    "library": "موسيقاي",
+    "search": "بحث",
+    "discover": "اكتشف",
+    "settings": "الإعدادات",
+    "signin": "تسجيل الدخول",
+    "signout": "تسجيل الخروج"
+  },
+  "action": {
+    "play": "تشغيل",
+    "pause": "إيقاف مؤقت",
+    "listen": "استمع",
+    "like": "إعجاب",
+    "share": "مشاركة",
+    "follow": "متابعة",
+    "upload": "رفع",
+    "publish": "نشر",
+    "search": "بحث"
+  },
+  "home": {
+    "hero_kicker": "وُلد في كينشاسا",
+    "hero_title": "صوت الكونغو، للعالم كله.",
+    "hero_subtitle": "رومبا وندومبولو وغوسبل وأفروبيتس — مصمّمة لشبكات أفريقيا، مع وضع التوفير.",
+    "start_mix": "ابدأ المكس",
+    "quick_studio": "استوديو سريع",
+    "for_you": "لك",
+    "for_you_sub": "مُقترح حسب استماعك",
+    "new_sounds": "أصوات جديدة",
+    "new_sounds_sub": "نُشرت حديثًا",
+    "africa_trends": "رائج في أفريقيا",
+    "africa_trends_sub": "القارة في تكرار",
+    "popular_artists": "فنانون مشهورون",
+    "popular_artists_sub": "أصوات اللحظة"
+  },
+  "wallet": {
+    "title": "المحفظة",
+    "coins": "MwanaCoins",
+    "hint": "اكسب MwanaCoins مع كل استماع كامل وكافئ فنانيك.",
+    "not_money": "نقاط تفاعل — لا شراء ولا سحب ولا تحويل."
+  },
+  "player": {
+    "now_playing": "قيد التشغيل الآن",
+    "eco_mode": "وضع التوفير"
+  },
+  "search": {
+    "placeholder": "بحث…"
+  },
+  "content": {
+    "song": "أغنية",
+    "instrumental": "موسيقى",
+    "asmr": "ASMR",
+    "podcast": "بودكاست",
+    "gospel": "ترانيم",
+    "nature": "أجواء"
+  },
+  "studio": {
+    "title": "الاستوديو",
+    "upload_cta": "انشر عملاً",
+    "dashboard": "لوحة"
+  },
+  "auth": {
+    "signin_cta": "تسجيل الدخول",
+    "welcome": "أهلاً"
+  },
+  "common": {
+    "all": "الكل",
+    "loading": "جارٍ التحميل…",
+    "brand": "MWANAKIN SOUND"
+  }
+}

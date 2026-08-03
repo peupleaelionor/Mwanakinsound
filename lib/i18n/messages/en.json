@@ -1,0 +1,73 @@
+{
+  "nav": {
+    "home": "Home",
+    "studio": "Studio",
+    "library": "My Music",
+    "search": "Search",
+    "discover": "Discover",
+    "settings": "Settings",
+    "signin": "Sign in",
+    "signout": "Sign out"
+  },
+  "action": {
+    "play": "Play",
+    "pause": "Pause",
+    "listen": "Listen",
+    "like": "Like",
+    "share": "Share",
+    "follow": "Follow",
+    "upload": "Upload",
+    "publish": "Publish",
+    "search": "Search"
+  },
+  "home": {
+    "hero_kicker": "Born in Kinshasa",
+    "hero_title": "The sound of Congo, for the whole planet.",
+    "hero_subtitle": "Rumba, ndombolo, gospel and afrobeats — built for African networks, with Eco Mode.",
+    "start_mix": "Start the mix",
+    "quick_studio": "Quick Studio",
+    "for_you": "For you",
+    "for_you_sub": "Recommended from your listens",
+    "new_sounds": "New sounds",
+    "new_sounds_sub": "Freshly published",
+    "africa_trends": "Africa trends",
+    "africa_trends_sub": "The continent on loop",
+    "popular_artists": "Popular artists",
+    "popular_artists_sub": "Voices of the moment"
+  },
+  "wallet": {
+    "title": "Wallet",
+    "coins": "MwanaCoins",
+    "hint": "Earn MwanaCoins on every full listen and reward your artists.",
+    "not_money": "Engagement points — no purchase, withdrawal or conversion."
+  },
+  "player": {
+    "now_playing": "Now playing",
+    "eco_mode": "Eco Mode"
+  },
+  "search": {
+    "placeholder": "Search…"
+  },
+  "content": {
+    "song": "Song",
+    "instrumental": "Instrumental",
+    "asmr": "ASMR",
+    "podcast": "Podcast",
+    "gospel": "Gospel",
+    "nature": "Ambience"
+  },
+  "studio": {
+    "title": "Studio",
+    "upload_cta": "Publish a creation",
+    "dashboard": "Dashboard"
+  },
+  "auth": {
+    "signin_cta": "Sign in",
+    "welcome": "Welcome"
+  },
+  "common": {
+    "all": "All",
+    "loading": "Loading…",
+    "brand": "MWANAKIN SOUND"
+  }
+}

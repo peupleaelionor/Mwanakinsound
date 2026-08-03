@@ -1,0 +1,73 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "studio": "Estudio",
+    "library": "Mi Música",
+    "search": "Buscar",
+    "discover": "Descubrir",
+    "settings": "Ajustes",
+    "signin": "Iniciar sesión",
+    "signout": "Cerrar sesión"
+  },
+  "action": {
+    "play": "Reproducir",
+    "pause": "Pausar",
+    "listen": "Escuchar",
+    "like": "Me gusta",
+    "share": "Compartir",
+    "follow": "Seguir",
+    "upload": "Subir",
+    "publish": "Publicar",
+    "search": "Buscar"
+  },
+  "home": {
+    "hero_kicker": "Nacido en Kinshasa",
+    "hero_title": "El sonido del Congo, para todo el planeta.",
+    "hero_subtitle": "Rumba, ndombolo, gospel y afrobeats — pensados para las redes africanas, con Modo Eco.",
+    "start_mix": "Iniciar la mezcla",
+    "quick_studio": "Estudio Rápido",
+    "for_you": "Para ti",
+    "for_you_sub": "Recomendado según tus escuchas",
+    "new_sounds": "Nuevos sonidos",
+    "new_sounds_sub": "Recién publicados",
+    "africa_trends": "Tendencias de África",
+    "africa_trends_sub": "El continente en bucle",
+    "popular_artists": "Artistas populares",
+    "popular_artists_sub": "Las voces del momento"
+  },
+  "wallet": {
+    "title": "Cartera",
+    "coins": "MwanaCoins",
+    "hint": "Gana MwanaCoins con cada escucha completa y recompensa a tus artistas.",
+    "not_money": "Puntos de participación — sin compra, retiro ni conversión."
+  },
+  "player": {
+    "now_playing": "Reproduciendo ahora",
+    "eco_mode": "Modo Eco"
+  },
+  "search": {
+    "placeholder": "Buscar…"
+  },
+  "content": {
+    "song": "Canción",
+    "instrumental": "Instrumental",
+    "asmr": "ASMR",
+    "podcast": "Podcast",
+    "gospel": "Góspel",
+    "nature": "Ambiente"
+  },
+  "studio": {
+    "title": "Estudio",
+    "upload_cta": "Publicar una creación",
+    "dashboard": "Panel"
+  },
+  "auth": {
+    "signin_cta": "Iniciar sesión",
+    "welcome": "Bienvenido"
+  },
+  "common": {
+    "all": "Todo",
+    "loading": "Cargando…",
+    "brand": "MWANAKIN SOUND"
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "nav": {
+    "home": "Ndako",
+    "studio": "Studio",
+    "library": "Miziki na ngai",
+    "search": "Boluki",
+    "discover": "Komona",
+    "settings": "Bibongiseli",
+    "signin": "Kokota",
+    "signout": "Kobima"
+  },
+  "action": {
+    "play": "Banda",
+    "pause": "Pema",
+    "listen": "Yoka",
+    "like": "Kolinga",
+    "share": "Kokabola",
+    "follow": "Kolanda",
+    "upload": "Kotinda",
+    "publish": "Kobimisa",
+    "search": "Luka"
+  },
+  "home": {
+    "hero_kicker": "Mbotama na Kinshasa",
+    "hero_title": "Lokito ya Congo, mpo na mokili mobimba.",
+    "hero_subtitle": "Rumba, ndombolo, nzembo ya Nzambe na afrobeats — mpo na miziki ya Afrika, na Mode Éco.",
+    "start_mix": "Banda mix",
+    "quick_studio": "Studio ya mbangu",
+    "for_you": "Mpo na yo",
+    "for_you_sub": "Oyo ekoki na ndenge oyoki",
+    "new_sounds": "Banzembo ya sika",
+    "new_sounds_sub": "Ebimi sika",
+    "africa_trends": "Oyo eleki na Afrika",
+    "africa_trends_sub": "Continent na boyoki",
+    "popular_artists": "Bayembi ya lokumu",
+    "popular_artists_sub": "Mingongo ya ntango oyo"
+  },
+  "wallet": {
+    "title": "Libenga",
+    "coins": "MwanaCoins",
+    "hint": "Zwa MwanaCoins na koyoka nzembo mobimba mpe pesa lokumu na bayembi na yo.",
+    "not_money": "Ezali mbongo te — ezali kaka bilembo ya engagement."
+  },
+  "player": {
+    "now_playing": "Ozali koyoka",
+    "eco_mode": "Mode Éco"
+  },
+  "search": {
+    "placeholder": "Luka…"
+  },
+  "content": {
+    "song": "Nzembo",
+    "instrumental": "Instrumental",
+    "asmr": "ASMR",
+    "podcast": "Podcast",
+    "gospel": "Nzembo ya Nzambe",
+    "nature": "Kimia"
+  },
+  "studio": {
+    "title": "Studio",
+    "upload_cta": "Bimisa création na yo",
+    "dashboard": "Etando ya mosala"
+  },
+  "auth": {
+    "signin_cta": "Kokota",
+    "welcome": "Boyei bolamu"
+  },
+  "common": {
+    "all": "Nyonso",
+    "loading": "Zela moke…",
+    "brand": "MWANAKIN SOUND"
+  }
+}
