@@ -6,7 +6,7 @@ import { createClient } from '@/lib/supabase/server';
 import { Section } from '@/components/section';
 import { TrackShelf } from '@/components/track-shelf';
 import { toTrackCards } from '@/lib/map-tracks';
-import { LiveListeners } from '@/features/realtime/live-listeners';
+import { LiveListenersLazy } from '@/features/realtime/live-listeners-lazy';
 import { formatCount } from '@/lib/utils';
 import type { TrackWithArtist } from '@/types/domain';
 
@@ -82,7 +82,7 @@ export default async function ArtistPage({ params }: { params: Promise<{ slug: s
               {formatCount(artist.monthly_listeners)} auditeurs mensuels
               {artist.city ? ` · ${artist.city}` : ''}
             </p>
-            <LiveListeners artistId={artist.id} />
+            <LiveListenersLazy artistId={artist.id} />
           </div>
           {(artist.ai_bio || artist.bio) && (
             <p className="mt-3 max-w-xl text-sm text-muted-foreground">

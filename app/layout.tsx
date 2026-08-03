@@ -9,6 +9,7 @@ import { PwaRegister } from '@/components/pwa-register';
 import { Toaster } from '@/components/ui/toaster';
 import { CommandMenu } from '@/features/command/command-menu';
 import { InstallPrompt } from '@/features/pwa/install-prompt';
+import { CoinsBridge } from '@/features/mwanacoins/coins-bridge';
 import { APP_NAME, APP_TAGLINE } from '@/lib/constants';
 import { env } from '@/lib/env';
 import './globals.css';
@@ -55,6 +56,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <CommandMenu />
           <Toaster />
           <InstallPrompt />
+          <CoinsBridge />
           <PwaRegister />
         </Providers>
       </body>

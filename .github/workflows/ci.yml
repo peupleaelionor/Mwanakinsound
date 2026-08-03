@@ -36,8 +36,14 @@ jobs:
         run: npm run test
 
       - name: Build
-        run: npm run build
+        run: npm run build | tee build.log
         env:
           # Build must succeed without secrets — inert placeholders kick in.
           # Real values are injected by Vercel per-environment at deploy time.
           NEXT_PUBLIC_SITE_URL: http://localhost:3000
+
+      # Contrainte non négociable §2.1 du brief : aucune route au-dessus du
+      # budget. Bloquant — une régression de poids se paie en secondes d'attente
+      # sur un lien Edge.
+      - name: Budget bundle (Bandal Test)
+        run: node scripts/check-bundle-budget.mjs build.log

@@ -1,0 +1,51 @@
+{
+  "nav.home": "Ndako",
+  "nav.search": "Koluka",
+  "nav.library": "Bibliotɛkɛ",
+  "nav.discover": "Komona",
+  "nav.studio": "Esika ya moyembi",
+  "nav.settings": "Ebongiseli",
+
+  "player.play": "Kobeta",
+  "player.pause": "Kopema",
+  "player.next": "Oyo elandi",
+  "player.previous": "Oyo eleki",
+  "player.shuffle": "Bokabwani",
+  "player.repeat": "Kozongela",
+  "player.nowPlaying": "Ezali kobeta",
+  "player.upNext": "Oyo ekolanda",
+  "player.volume": "Makasi ya mongongo",
+  "player.buffering": "Ezali kokota…",
+  "player.offline": "Ozali na intɛrnɛti te — ekozongela yango moko",
+  "player.reconnecting": "Ezali kozongisa boyokani…",
+
+  "home.heroTitle": "Mongongo ya kontiná, mpo na mokili mobimba.",
+  "home.forYou": "Mpo na yo",
+  "home.newReleases": "Banzembo ya sika",
+  "home.trendingDrc": "Oyo eleki na RDC",
+  "home.trendingAfrica": "Oyo eleki na Afrika",
+  "home.popularArtists": "Bayembi ya lokumu",
+
+  "auth.signIn": "Kokota",
+  "auth.signUp": "Kosala kɔntɛ",
+  "auth.signOut": "Kobima",
+  "auth.email": "Adrɛsi ya imɛlɛ",
+  "auth.password": "Liloba ya kobomba",
+
+  "settings.dataSaver": "Kobatela dàta",
+  "settings.dataSaverDesc": "Mongongo mpe bililingi ya pɛtɛɛ — malamu soki intɛrnɛti ezali makasi te.",
+  "settings.language": "Monɔkɔ",
+  "settings.account": "Kɔntɛ",
+
+  "common.searchPlaceholder": "Luka moyembi to nzembo…",
+  "common.seeAll": "Tala nyonso",
+  "common.empty": "Eloko ya kolakisa ezali te sikoyo.",
+  "common.share": "Kokabola",
+  "common.listeners": "bayoki {count}",
+
+  "coins.name": "MwanaCoins",
+  "coins.balance": "Motango na yo",
+  "coins.disclaimer": "MwanaCoins ezali kaka bapwɛ ya bosangani. Ezali mbongo te, okoki kosomba yango te mpe kobongola yango na mbongo te.",
+
+  "share.message": "Yoka {title} ya {artist} na Mwanakin Sound"
+}

@@ -221,6 +221,19 @@ export type TrackGenre = {
   genre_id: string;
 }
 
+/**
+ * Grand livre MwanaCoins — points d'engagement social.
+ * Sans valeur monétaire : aucune relation avec `payments` ou `subscriptions`.
+ */
+export type MwanaCoinsEntry = {
+  id: number;
+  user_id: string;
+  kind: string;
+  subject_id: string;
+  points: number;
+  created_at: string;
+}
+
 /** Generic table helper: Insert/Update default to partial rows. */
 type Table<Row, Insert = Partial<Row>, Update = Partial<Row>> = {
   Row: Row;
@@ -248,6 +261,8 @@ export interface Database {
       payments: Table<Payment, Pick<Payment, 'provider' | 'amount_cents'> & Partial<Payment>>;
       play_history: Table<PlayHistory, Pick<PlayHistory, 'user_id' | 'track_id'> & Partial<PlayHistory>>;
       track_genres: Table<TrackGenre, TrackGenre>;
+      // Lecture seule côté client : l'écriture passe par `award_mwana_coins`.
+      mwana_coins_ledger: Table<MwanaCoinsEntry, never, never>;
     };
     Views: Record<never, never>;
     Functions: {
@@ -265,6 +280,15 @@ export interface Database {
           p_city?: string;
         };
         Returns: undefined;
+      };
+      /** MwanaCoins — points d'engagement social, sans valeur monétaire. */
+      award_mwana_coins: {
+        Args: { p_kind: string; p_subject_id: string };
+        Returns: number;
+      };
+      mwana_coins_balance: {
+        Args: Record<string, never>;
+        Returns: number;
       };
     };
     Enums: {

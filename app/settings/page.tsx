@@ -4,6 +4,7 @@ import { Wifi, Globe } from 'lucide-react';
 import { createClient } from '@/lib/supabase/server';
 import { DataSaverToggle } from '@/features/settings/data-saver-toggle';
 import { SignOutButton } from '@/features/settings/sign-out-button';
+import { CoinsCard } from '@/features/mwanacoins/coins-card';
 import { LANGUAGES } from '@/lib/constants';
 import { Card } from '@/components/ui/card';
 
@@ -31,6 +32,8 @@ export default async function SettingsPage() {
       <h1 className="mb-6 font-display text-2xl font-bold md:text-3xl">Réglages</h1>
 
       <div className="space-y-4">
+        <CoinsCard />
+
         <Card className="flex items-center justify-between gap-4 p-4">
           <div className="flex items-start gap-3">
             <Wifi className="mt-0.5 size-5 text-primary" />

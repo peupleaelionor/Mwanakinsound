@@ -1,0 +1,51 @@
+{
+  "nav.home": "Home",
+  "nav.search": "Search",
+  "nav.library": "Library",
+  "nav.discover": "Discover",
+  "nav.studio": "Artist Studio",
+  "nav.settings": "Settings",
+
+  "player.play": "Play",
+  "player.pause": "Pause",
+  "player.next": "Next",
+  "player.previous": "Previous",
+  "player.shuffle": "Shuffle",
+  "player.repeat": "Repeat",
+  "player.nowPlaying": "Now playing",
+  "player.upNext": "Up next",
+  "player.volume": "Volume",
+  "player.buffering": "Buffering…",
+  "player.offline": "Offline — will resume automatically",
+  "player.reconnecting": "Reconnecting…",
+
+  "home.heroTitle": "The sound of the continent, within the world's reach.",
+  "home.forYou": "For you",
+  "home.newReleases": "New releases",
+  "home.trendingDrc": "Trending in DRC",
+  "home.trendingAfrica": "Trending in Africa",
+  "home.popularArtists": "Popular artists",
+
+  "auth.signIn": "Sign in",
+  "auth.signUp": "Create account",
+  "auth.signOut": "Sign out",
+  "auth.email": "Email address",
+  "auth.password": "Password",
+
+  "settings.dataSaver": "Data saver",
+  "settings.dataSaverDesc": "Compressed audio and lighter images — built for low-bandwidth networks.",
+  "settings.language": "Language",
+  "settings.account": "Account",
+
+  "common.searchPlaceholder": "Search an artist, a track…",
+  "common.seeAll": "See all",
+  "common.empty": "Nothing to show yet.",
+  "common.share": "Share",
+  "common.listeners": "{count} listeners",
+
+  "coins.name": "MwanaCoins",
+  "coins.balance": "Your balance",
+  "coins.disclaimer": "MwanaCoins are social engagement points. They hold no monetary value and cannot be purchased or exchanged for money.",
+
+  "share.message": "Listen to {title} by {artist} on Mwanakin Sound"
+}

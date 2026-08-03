@@ -19,7 +19,11 @@
     "incremental": true,
     "plugins": [{ "name": "next" }],
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./*"],
+      "@mabele/core": ["./packages/mabele-core/src/index.ts"],
+      "@mabele/i18n": ["./packages/mabele-i18n/src/index.ts"],
+      "@mabele/credit": ["./packages/mabele-credit/src/index.ts"],
+      "@mabele/agent": ["./packages/mabele-agent/src/index.ts"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

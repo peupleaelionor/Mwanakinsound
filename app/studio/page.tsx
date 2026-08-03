@@ -6,7 +6,7 @@ import { getStudioOverview } from '@/services/studio';
 import { StatCard } from '@/features/analytics/stat-card';
 import { StreamsChart } from '@/features/analytics/streams-chart';
 import { CreateArtistCta } from '@/features/artists/create-artist-cta';
-import { UploadTrackDialog } from '@/features/studio/upload-track-dialog';
+import { UploadTrackLauncher } from '@/features/studio/upload-track-launcher';
 import { formatCount, formatDuration } from '@/lib/utils';
 
 export const metadata: Metadata = { title: 'Espace artiste' };
@@ -42,7 +42,7 @@ export default async function StudioPage() {
           <p className="text-sm text-primary">Espace artiste</p>
           <h1 className="font-display text-2xl font-bold md:text-3xl">{artist.name}</h1>
         </div>
-        <UploadTrackDialog artistId={artist.id} />
+        <UploadTrackLauncher artistId={artist.id} />
       </div>
 
       <div className="mb-8 grid grid-cols-2 gap-3 md:grid-cols-4">

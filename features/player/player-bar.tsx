@@ -13,7 +13,7 @@ import {
   Volume2,
   VolumeX,
 } from 'lucide-react';
-import { ChevronUp } from 'lucide-react';
+import { ChevronUp, WifiOff, Loader2 } from 'lucide-react';
 import { usePlayerStore } from './player-store';
 import { LikeButton } from '@/features/likes/like-button';
 import { Slider } from '@/components/ui/slider';
@@ -75,7 +75,7 @@ export function PlayerBar() {
               </button>
               <button onClick={() => setExpanded(true)} className="min-w-0 text-left">
                 <p className="truncate text-sm font-medium">{current.title}</p>
-                <span className="truncate text-xs text-muted-foreground">{current.artistName}</span>
+                <PlaybackStatusLine artistName={current.artistName} />
               </button>
               <LikeButton trackId={current.id} size="sm" className="hidden md:inline-flex" />
             </div>
@@ -170,4 +170,32 @@ export function PlayerBar() {
       )}
     </AnimatePresence>
   );
+}
+
+/**
+ * Sous-titre du lecteur : nom de l'artiste en temps normal, état de la
+ * connexion quand la lecture est en difficulté.
+ *
+ * Rassurer explicitement (« reprise automatique ») évite que l'utilisateur
+ * relance manuellement et consomme de la data pour rien.
+ */
+function PlaybackStatusLine({ artistName }: { artistName: string }) {
+  const health = usePlayerStore((s) => s.health);
+
+  if (health === 'offline') {
+    return (
+      <span className="flex items-center gap-1 truncate text-xs text-destructive">
+        <WifiOff className="size-3 shrink-0" /> Hors ligne — reprise automatique
+      </span>
+    );
+  }
+  if (health === 'reconnecting' || health === 'buffering') {
+    return (
+      <span className="flex items-center gap-1 truncate text-xs text-muted-foreground">
+        <Loader2 className="size-3 shrink-0 animate-spin" />
+        {health === 'reconnecting' ? 'Reconnexion…' : 'Chargement…'}
+      </span>
+    );
+  }
+  return <span className="truncate text-xs text-muted-foreground">{artistName}</span>;
 }

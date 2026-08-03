@@ -16,6 +16,7 @@
     "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md,css}\"",
     "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,json,md,css}\"",
     "typecheck": "tsc --noEmit",
+    "budget": "next build > .bundle-report.log 2>&1 && node scripts/check-bundle-budget.mjs .bundle-report.log",
     "test": "vitest run",
     "test:watch": "vitest",
     "db:migrate": "supabase db push",

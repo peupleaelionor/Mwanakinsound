@@ -2,6 +2,7 @@
 
 import { create } from 'zustand';
 import type { PlayableTrack } from '@/types/domain';
+import type { PlaybackHealth } from './resilient-audio';
 
 type RepeatMode = 'off' | 'all' | 'one';
 
@@ -19,6 +20,8 @@ interface PlayerState {
   positionMs: number;
   /** Full-screen "Now Playing" view visibility. */
   expanded: boolean;
+  /** État de santé de la lecture, alimenté par le moteur résilient. */
+  health: PlaybackHealth;
 
   // --- derived ---
   current: () => PlayableTrack | null;
@@ -37,6 +40,7 @@ interface PlayerState {
   toggleShuffle: () => void;
   setPosition: (ms: number) => void;
   setExpanded: (v: boolean) => void;
+  setHealth: (h: PlaybackHealth) => void;
 }
 
 export const usePlayerStore = create<PlayerState>((set, get) => ({
@@ -49,6 +53,7 @@ export const usePlayerStore = create<PlayerState>((set, get) => ({
   shuffle: false,
   positionMs: 0,
   expanded: false,
+  health: 'idle',
 
   current: () => {
     const { queue, currentIndex } = get();
@@ -119,4 +124,5 @@ export const usePlayerStore = create<PlayerState>((set, get) => ({
   toggleShuffle: () => set((s) => ({ shuffle: !s.shuffle })),
   setPosition: (ms) => set({ positionMs: ms }),
   setExpanded: (v) => set({ expanded: v }),
+  setHealth: (h) => set({ health: h }),
 }));

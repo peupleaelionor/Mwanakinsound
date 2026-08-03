@@ -92,6 +92,39 @@ docs/          Documentation d'architecture
 - [Base de données](docs/DATABASE.md) — schéma, RLS, indexes.
 - [Contribution](CONTRIBUTING.md) — workflow, conventions de commit.
 
+## 🪙 MwanaCoins — points d'engagement social
+
+> **Les MwanaCoins ne sont pas une monnaie.**
+>
+> Ce sont des **points d'engagement social** qui mesurent la participation à la
+> communauté (écoutes, partages, commentaires, publications). Ils **n'ont aucune
+> valeur monétaire** : ils ne peuvent être ni achetés, ni vendus, ni échangés
+> contre de l'argent, ni convertis en crypto-actif. Il ne s'agit ni d'une
+> monnaie, ni d'un substitut monétaire, ni d'un instrument financier.
+>
+> Cette séparation est garantie par l'architecture, pas seulement par la
+> documentation : le grand livre `mwana_coins_ledger` n'a **aucune relation** avec
+> les tables `payments` ou `subscriptions`, et l'interface `CreditEngine`
+> n'expose **aucune** opération d'achat, de retrait, de conversion ou de
+> transfert. Un test automatisé vérifie l'absence de cette surface d'API.
+
+Attribution exclusivement côté serveur, via la RPC `award_mwana_coins`
+(`SECURITY DEFINER`), avec plafonds journaliers anti-abus. Le client ne peut pas
+écrire son propre solde.
+
+## ⚡ Budget de performance (« Bandal Test »)
+
+Chaque route doit rester **sous 200 kb de JS initial (gzip)** — sur un lien
+Edge à ~400 kb/s, chaque tranche de 50 ko coûte environ une seconde avant le
+premier son.
+
+```bash
+npm run budget    # build + vérification du budget par route
+```
+
+Cette vérification est **bloquante en CI**. Dernier rapport de mesures :
+[`docs/perf/bandal-report-001.md`](docs/perf/bandal-report-001.md).
+
 ## 🔐 Sécurité
 
 RLS activée sur **toutes** les tables (default-deny). Ingestion des écoutes via

@@ -1,0 +1,51 @@
+{
+  "nav.home": "Nyumbani",
+  "nav.search": "Tafuta",
+  "nav.library": "Maktaba",
+  "nav.discover": "Gundua",
+  "nav.studio": "Eneo la msanii",
+  "nav.settings": "Mipangilio",
+
+  "player.play": "Cheza",
+  "player.pause": "Sitisha",
+  "player.next": "Ifuatayo",
+  "player.previous": "Iliyotangulia",
+  "player.shuffle": "Changanya",
+  "player.repeat": "Rudia",
+  "player.nowPlaying": "Inachezwa sasa",
+  "player.upNext": "Inayofuata",
+  "player.volume": "Sauti",
+  "player.buffering": "Inapakia…",
+  "player.offline": "Nje ya mtandao — itaendelea yenyewe",
+  "player.reconnecting": "Inaunganisha tena…",
+
+  "home.heroTitle": "Sauti ya bara, kwa dunia nzima.",
+  "home.forYou": "Kwa ajili yako",
+  "home.newReleases": "Nyimbo mpya",
+  "home.trendingDrc": "Maarufu DRC",
+  "home.trendingAfrica": "Maarufu Afrika",
+  "home.popularArtists": "Wasanii maarufu",
+
+  "auth.signIn": "Ingia",
+  "auth.signUp": "Fungua akaunti",
+  "auth.signOut": "Toka",
+  "auth.email": "Barua pepe",
+  "auth.password": "Nenosiri",
+
+  "settings.dataSaver": "Hali ya kuokoa data",
+  "settings.dataSaverDesc": "Sauti na picha nyepesi — inafaa mtandao dhaifu.",
+  "settings.language": "Lugha",
+  "settings.account": "Akaunti",
+
+  "common.searchPlaceholder": "Tafuta msanii au wimbo…",
+  "common.seeAll": "Ona zote",
+  "common.empty": "Hakuna cha kuonyesha kwa sasa.",
+  "common.share": "Shiriki",
+  "common.listeners": "wasikilizaji {count}",
+
+  "coins.name": "MwanaCoins",
+  "coins.balance": "Salio lako",
+  "coins.disclaimer": "MwanaCoins ni pointi za ushiriki wa kijamii. Hazina thamani ya kifedha, haziuzwi wala kubadilishwa kuwa pesa.",
+
+  "share.message": "Sikiliza {title} ya {artist} kwenye Mwanakin Sound"
+}

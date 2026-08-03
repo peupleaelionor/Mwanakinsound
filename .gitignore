@@ -38,6 +38,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 
+# rapport de budget bundle (genere par `npm run budget`)
+.bundle-report.log
+
 # supabase
 /supabase/.branches
 /supabase/.temp

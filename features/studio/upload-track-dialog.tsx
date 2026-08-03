@@ -24,9 +24,16 @@ type Step = 'idle' | 'uploading' | 'saving';
  * track row (published). Client-side validation matches the Storage policies,
  * so bad files are rejected before any network call.
  */
-export function UploadTrackDialog({ artistId }: { artistId: string }) {
+export function UploadTrackDialog({
+  artistId,
+  autoOpen = false,
+}: {
+  artistId: string;
+  /** Ouvre le dialogue dès le montage — utilisé par le lanceur paresseux. */
+  autoOpen?: boolean;
+}) {
   const router = useRouter();
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(autoOpen);
   const [title, setTitle] = useState('');
   const [audio, setAudio] = useState<File | null>(null);
   const [cover, setCover] = useState<File | null>(null);

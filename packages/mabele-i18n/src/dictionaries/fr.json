@@ -1,0 +1,51 @@
+{
+  "nav.home": "Accueil",
+  "nav.search": "Recherche",
+  "nav.library": "Bibliothèque",
+  "nav.discover": "Découvrir",
+  "nav.studio": "Espace artiste",
+  "nav.settings": "Réglages",
+
+  "player.play": "Lecture",
+  "player.pause": "Pause",
+  "player.next": "Suivant",
+  "player.previous": "Précédent",
+  "player.shuffle": "Aléatoire",
+  "player.repeat": "Répéter",
+  "player.nowPlaying": "En lecture",
+  "player.upNext": "À suivre",
+  "player.volume": "Volume",
+  "player.buffering": "Chargement…",
+  "player.offline": "Hors ligne — reprise automatique",
+  "player.reconnecting": "Reconnexion…",
+
+  "home.heroTitle": "Le son du continent, à portée du monde.",
+  "home.forYou": "Pour vous",
+  "home.newReleases": "Nouveaux sons",
+  "home.trendingDrc": "Tendances RDC",
+  "home.trendingAfrica": "Tendances Afrique",
+  "home.popularArtists": "Artistes populaires",
+
+  "auth.signIn": "Se connecter",
+  "auth.signUp": "Créer un compte",
+  "auth.signOut": "Se déconnecter",
+  "auth.email": "Adresse e-mail",
+  "auth.password": "Mot de passe",
+
+  "settings.dataSaver": "Mode économie de données",
+  "settings.dataSaverDesc": "Audio compressé et images allégées — idéal en réseau faible débit.",
+  "settings.language": "Langue",
+  "settings.account": "Compte",
+
+  "common.searchPlaceholder": "Rechercher un artiste, un titre…",
+  "common.seeAll": "Tout voir",
+  "common.empty": "Rien à afficher pour le moment.",
+  "common.share": "Partager",
+  "common.listeners": "{count} auditeurs",
+
+  "coins.name": "MwanaCoins",
+  "coins.balance": "Votre solde",
+  "coins.disclaimer": "Les MwanaCoins sont des points d'engagement social. Ils n'ont aucune valeur monétaire, ne sont ni achetables ni échangeables contre de l'argent.",
+
+  "share.message": "Écoute {title} de {artist} sur Mwanakin Sound"
+}
